@@ -1,4 +1,4 @@
-# Project Name
+# LeopardSpot
 
 > Pithy project description
 
