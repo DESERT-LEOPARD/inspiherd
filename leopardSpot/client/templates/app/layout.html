@@ -1,0 +1,9 @@
+<template name="layout">
+  <div class="container jumbotron"> <!-- ToDo: customize jumbotron css -->
+    {{> header}}
+    <!-- {{> errors}} Directs to errors- would need to make an errors collection -->
+    <div id="main" > <!-- Todo: reconfigure bootstrap: class = class="row-fluid" -->
+      {{> yield}} <!-- this iron-router helper will define a special dynamic zone that will automaticall render whichever template corresponds to the current route  -->
+    </div>
+  </div>
+</template>
