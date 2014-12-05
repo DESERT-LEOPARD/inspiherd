@@ -6,3 +6,19 @@ Router.configure({
   //   return Meteor.subscribe('slides');
   // }
 });
+
+Router.route('/',{
+  name: 'intro'
+});
+
+Router.route('/signup', {
+  name: 'signup'
+});
+
+Router.route('/login',{
+  name: 'login'
+});
+
+Router.route('/presentationView',{
+  name: 'presentationView'
+});
