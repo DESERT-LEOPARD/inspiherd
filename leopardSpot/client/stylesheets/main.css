@@ -6,9 +6,7 @@
 body {
   background-image: url("../assets/animalPrint1.gif");
 }
-.ui .button{
-  text-transform: capitalize;
-}
+
 
 .jumbotron{
   text-align: center;
@@ -19,19 +17,10 @@ body {
   font-weight: 100;
 }
 
-.ui.large.menu {
-  line-height: 5em;
-}
 
-.ui.large.inverted.menu {
+.ui.large.inverted.menu.header {
   line-height: 5em;
   margin-bottom: 0;
-}
-
-.mainLeopard {
-  background-image: url("../assets/leopardblue.jpg");
-  background-size: 100%;
-
 }
 
 .ui.large.segment {
@@ -72,8 +61,7 @@ body {
 }
 
 
-
-textarea {
+textarea .textEditor {
     margin: 0;
     height: 100%;
     width: 100%;
