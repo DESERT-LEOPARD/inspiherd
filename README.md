@@ -24,7 +24,7 @@
 - (optional) Create an account
 - Select "Make New Presentation"
 - Create your slide deck in Markdown
-- - use '***' or 'hr' tag to break pages
+  - use '***' or 'hr' tag to break pages
 - Build awesome slides
 - (optional) Create polling questions for audience members
 - Present awesome slides
