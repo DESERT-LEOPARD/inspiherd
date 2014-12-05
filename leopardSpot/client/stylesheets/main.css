@@ -28,13 +28,39 @@
 .mainLeopard {
   background-image: url("../assets/leopardblue.jpg");
   background-size: 100%;
+
+}
+
+.ui.large.segment {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70%;
+  top: 2em;
+}
+
+.ui.ribbon.label {
+  position: absolute;
+  left: -1rem;
+}
+
+.ui.segment.savedPresentations {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 2em;
+}
+
+.ui.segment.pictureBox {
+  height: 80%;
+}
+
+.ui.steps {
+  margin-top: 2%;
 }
 
 .ui.large.form.segment {
   width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
 }
 
 .access-denied {
