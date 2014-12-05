@@ -1,4 +1,6 @@
 AccountsTemplates.removeField('email');
+AccountsTemplates.removeField('password');
+
 AccountsTemplates.addFields([
   {
       _id: "username",
@@ -14,13 +16,11 @@ AccountsTemplates.addFields([
       displayName: "email",
       re: /.+@(.+){2,}\.(.+){2,}/,
       errStr: 'Invalid email',
+  },
+  {
+      _id: 'password',
+      type: 'password',
+      required: true,
+      minLength: 6,
   }
 ]);
-
-AccountsTemplates.removeField('password');
-AccountsTemplates.addField({
-    _id: 'password',
-    type: 'password',
-    required: true,
-    minLength: 6,
-});
