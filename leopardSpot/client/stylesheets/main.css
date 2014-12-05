@@ -45,6 +45,7 @@ body {
 .ui.ribbon.label {
   position: absolute;
   left: -1rem;
+  top : .5rem;
 }
 
 .ui.segment.savedPresentations {
@@ -66,15 +67,33 @@ body {
   width: 40%;
 }
 
+.ui.large.segment.textEditor {
+  padding: 0;
+}
+
+
+
 textarea {
     margin: 0;
     height: 100%;
     width: 100%;
+    padding: 1em;
+    padding-top: 3em;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;   
 }
 
+.ui.steps.presentationCommands {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.segment.presentationCommands {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 .access-denied {
   /*add styles*/
 }
