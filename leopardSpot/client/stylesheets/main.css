@@ -4,11 +4,10 @@
 
 .jumbotron{
   text-align: center;
-  line-height: 5em;
 }
 
 body {
-  background-image: url("../assets/animalPrint1.gif");
+  background-image: url("/client/assets/animalPrint1.gif");
 }
 
 .hidden{
@@ -16,13 +15,7 @@ body {
 }
 
 .jumbotron h2{
-  font-size: 2em;
   font-weight: 100;
-}
-
-
-.ui.large.inverted.menu.header {
-  margin-bottom: 0;
 }
 
 .ui.large.segment {
@@ -37,6 +30,19 @@ body {
   margin-top: 2%;
 }
 
+/*************Header****************/
+
+.ui.large.inverted.menu.leopardNav {
+  margin-bottom: 0;
+}
+
+.menu.leoparNav {
+  height: 100%;
+}
+
+.ui.large.menu .item.leopardNav {
+  line-height: 2.5rem;
+}
 /*********** Intro Page ***************/
 
 .ui.segment.pictureBox {
