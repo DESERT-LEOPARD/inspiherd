@@ -1,0 +1,68 @@
+
+.hidden{
+  opacity: 0;
+}
+
+.ui .button{
+  text-transform: capitalize;
+}
+
+.jumbotron{
+  text-align: center;
+}
+
+.jumbotron h2{
+  font-size: 2em;
+  font-weight: 100;
+}
+
+.ui.large.menu {
+  line-height: 5em;
+}
+
+.ui.large.inverted.menu {
+  line-height: 5em;
+  margin-bottom: 0;
+}
+
+.mainLeopard {
+  background-image: url("../assets/leopardblue.jpg");
+  background-size: 100%;
+
+}
+
+.ui.large.segment {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70%;
+  top: 2em;
+}
+
+.ui.ribbon.label {
+  position: absolute;
+  left: -1rem;
+}
+
+.ui.segment.savedPresentations {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 2em;
+}
+
+.ui.segment.pictureBox {
+  height: 80%;
+}
+
+.ui.steps {
+  margin-top: 2%;
+}
+
+.ui.large.form.segment {
+  width: 40%;
+}
+
+.access-denied {
+  /*add styles*/
+}

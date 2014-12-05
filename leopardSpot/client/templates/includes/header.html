@@ -1,0 +1,21 @@
+<template name="header"> <!-- this includes navBar --> 
+  <div class="ui large inverted menu">
+    <div class="left menu">
+      <a class="active item"> <!--to do, add route to home activeRouteClass i.e.  <li class="{{activeRouteClass 'home' 'newPosts'}}" and  href="{{pathFor 'newPosts'}}"> -->
+        <i class="home icon"></i> Home
+      </a>
+    </div>
+    <div class="right menu">
+      <a class="item">
+        <i class="sign in icon"></i> Log In <!--To do: make disappear if a user is signer in-->
+      </a>
+      <a class="item">
+        <i class="sign out icon"></i> Log Out <!--To do: make appear if a user is signer in-->
+      </a>
+      <a class="item">
+        <i class="user icon"></i> Sign Up
+      </a>
+    </div>
+  </div>
+</template>
+

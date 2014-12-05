@@ -6,3 +6,7 @@
 meteor-platform
 autopublish
 insecure
+nooitaf:semantic-ui
+sacha:spin
+iron:router
+
