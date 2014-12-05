@@ -3,6 +3,9 @@
   opacity: 0;
 }
 
+body {
+  background-image: url("../assets/animalPrint1.gif");
+}
 .ui .button{
   text-transform: capitalize;
 }
@@ -61,6 +64,15 @@
 
 .ui.large.form.segment {
   width: 40%;
+}
+
+textarea {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;   
 }
 
 .access-denied {
