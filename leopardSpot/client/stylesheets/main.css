@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url("/client/assets/animalPrint1.gif");
+  background-image: url("assets/animalPrint1.gif");
 }
 
 .hidden{
@@ -42,6 +42,12 @@ body {
 
 .ui.large.menu .item.leopardNav {
   line-height: 2.5rem;
+  font-size: 1.5rem;
+  color: #66FFFF;
+}
+
+.ui.large.menu .item {
+
 }
 /*********** Intro Page ***************/
 

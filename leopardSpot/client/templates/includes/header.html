@@ -1,18 +1,18 @@
 <template name="header"> <!-- this includes navBar --> 
   <div class="ui large inverted menu leopardNav">
     <div class="left menu leopardNav">
-      <a class="active item leopardNav" href="{{pathFor 'intro'}}"> 
+      <a class="item leopardNav" href="{{pathFor 'intro'}}"> 
         <i class="home icon"></i> Home
       </a>
     </div>
     <div class="right menu leopardNav">
 
       {{#if currentUser}}
-      <a class="active item leopardNav">
+      <a class="item leopardNav">
         <i class="sign out icon"></i> Log Out
       </a>
       {{/if}}
-      <a class="active item leopardNav" href="{{pathFor 'signup'}}">
+      <a class="item leopardNav" href="{{pathFor 'signup'}}">
         <i class="user icon"></i> Sign Up / Log-In
       </a>
     </div>
