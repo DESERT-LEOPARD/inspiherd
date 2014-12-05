@@ -1,6 +1,6 @@
 # LeopardSpot
 
-> Pithy project description
+> LeopardSpot is a cloud-based slide presenter designed for interactive polling that provides realtime feedback of audience votes to the presenter.
 
 ## Team
 
@@ -20,27 +20,20 @@
 
 ## Usage
 
-> Some usage instructions
+> 
 
 ## Requirements
 
 - Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Meteor 
+  - MongoDB
+  - Iron Router
+- semantic-ui
 
 ## Development
 
 ### Installing Dependencies
 
-From within the root directory:
-
-```sh
-sudo npm install -g bower
-npm install
-bower install
-```
 
 ### Roadmap
 
