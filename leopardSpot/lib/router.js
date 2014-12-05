@@ -19,7 +19,10 @@ Router.route('/login',{
   name: 'login'
 });
 
-Router.route('/presentationView',{
-  name: 'presentationView'
+Router.route('/create',{
+  name: 'makePresentation'
 });
 
+Router.route('/list',{
+  name: 'savedPresentations'
+});
