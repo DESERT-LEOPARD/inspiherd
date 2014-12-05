@@ -1,5 +1,4 @@
 AccountsTemplates.removeField('email');
-
 AccountsTemplates.addFields([
   {
       _id: "username",
@@ -18,4 +17,10 @@ AccountsTemplates.addFields([
   }
 ]);
 
-// AccountsTemplates.removeField('password');
+AccountsTemplates.removeField('password');
+AccountsTemplates.addField({
+    _id: 'password',
+    type: 'password',
+    required: true,
+    minLength: 6,
+});
