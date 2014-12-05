@@ -7,7 +7,7 @@ AccountsTemplates.addFields([
       type: "text",
       displayName: "username",
       required: true,
-      minLength: 5,
+      minLength: 3,
   },
   {
       _id: 'email',
@@ -24,3 +24,41 @@ AccountsTemplates.addFields([
       minLength: 6,
   }
 ]);
+
+AccountsTemplates.configure({
+    // Behaviour
+    confirmPassword: true,
+    enablePasswordChange: true,
+    forbidClientAccountCreation: false,
+    overrideLoginErrors: true,
+    sendVerificationEmail: false,
+
+    // Appearance
+    showAddRemoveServices: false,
+    showForgotPasswordLink: true,
+    showLabels: true,
+    showPlaceholders: true,
+
+    // Client-side Validation
+    continuousValidation: false,
+    negativeFeedback: false,
+    negativeValidation: true,
+    positiveValidation: true,
+    positiveFeedback: true,
+    showValidating: true,
+
+    // Redirects
+    homeRoutePath: '/',
+    redirectTimeout: 4000,
+
+    // Texts
+    texts: {
+      button: {
+          signUp: "Register Now!"
+      },
+      socialSignUp: "Register",
+      title: {
+          forgotPwd: "Recover Your Passwod"
+      },
+    },
+});
