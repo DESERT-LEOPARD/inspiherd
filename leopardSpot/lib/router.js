@@ -23,3 +23,6 @@ Router.route('/create',{
   name: 'makePresentation'
 });
 
+Router.route('/list',{
+  name: 'savedPresentations'
+});
