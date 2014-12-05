@@ -1,3 +1,5 @@
+
+
 AccountsTemplates.removeField('email');
 AccountsTemplates.removeField('password');
 
@@ -35,7 +37,7 @@ AccountsTemplates.configure({
 
     // Appearance
     showAddRemoveServices: false,
-    showForgotPasswordLink: true,
+    // showForgotPasswordLink: true,
     showLabels: true,
     showPlaceholders: true,
 
@@ -54,7 +56,7 @@ AccountsTemplates.configure({
     // Texts
     texts: {
       button: {
-          signUp: "Register Now!"
+          signUp: "Register Now!",
       },
       socialSignUp: "Register",
       title: {
