@@ -1,6 +1,6 @@
 # LeopardSpot
 
-> LeopardSpot is a cloud-based slide presenter designed for interactive polling that provides realtime feedback of audience votes to the presenter.
+> LeopardSpot is a cloud-based slide presenter designed for interactive polling that provides realtime feedback of audience votes to the presenter. Leopard spot utlizes markdown for quick, clean slide deck creation. Built on Meteor, reactive design is baked right in, minimizing latancy between presenter and audience. 
 
 ## Team
 
@@ -20,7 +20,15 @@
 
 ## Usage
 
-> 
+- Visit <url>
+- (optional) Create an account
+- Select "Make New Presentation"
+- Create your slide deck in Markdown
+- - use '***' or 'hr' tag to break pages
+- Build awesome slides
+- (optional) Create polling questions for audience members
+- Present awesome slides
+- profit
 
 ## Requirements
 
