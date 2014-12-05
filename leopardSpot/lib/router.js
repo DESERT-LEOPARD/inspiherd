@@ -7,6 +7,7 @@ Router.configure({
   // }
 });
 
+
 Router.route('/',{
   name: 'intro'
 });

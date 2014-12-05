@@ -3,9 +3,10 @@
   opacity: 0;
 }
 
-.ui .button{
-  text-transform: capitalize;
+body {
+  background-image: url("../assets/animalPrint1.gif");
 }
+
 
 .jumbotron{
   text-align: center;
@@ -16,19 +17,10 @@
   font-weight: 100;
 }
 
-.ui.large.menu {
-  line-height: 5em;
-}
 
-.ui.large.inverted.menu {
+.ui.large.inverted.menu.header {
   line-height: 5em;
   margin-bottom: 0;
-}
-
-.mainLeopard {
-  background-image: url("../assets/leopardblue.jpg");
-  background-size: 100%;
-
 }
 
 .ui.large.segment {
@@ -42,6 +34,7 @@
 .ui.ribbon.label {
   position: absolute;
   left: -1rem;
+  top : .5rem;
 }
 
 .ui.segment.savedPresentations {
@@ -63,6 +56,34 @@
   width: 40%;
 }
 
+.ui.large.segment.textEditor {
+  padding: 0;
+}
+
+
+
+textarea .textEditor {
+
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    padding-top: 3em;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;   
+}
+
+.ui.steps.presentationCommands {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.segment.presentationCommands {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 .access-denied {
   /*add styles*/
 }
