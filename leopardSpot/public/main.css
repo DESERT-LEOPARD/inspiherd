@@ -22,12 +22,11 @@ body {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  height: 70%;
   top: 2em;
 }
 
-.ui.steps {
-  margin-top: 2%;
+.ui.steps.intro {
+  margin-top: 5%;
 }
 
 /*************Header****************/
@@ -40,20 +39,43 @@ body {
   height: 100%;
 }
 
+.ui.inverted.menu a.item:active, .ui.inverted.menu .dropdown.item:active, .ui.inverted.menu .link.item:active, .ui.inverted.menu a.item:active {
+  outline: 0;
+  background-color: #66FFFF;
+  color: white;
+}
+
 .ui.large.menu .item.leopardNav {
   line-height: 2.5rem;
   font-size: 1.5rem;
   color: #66FFFF;
 }
 
-.ui.large.menu .item {
 
-}
 /*********** Intro Page ***************/
+
+.ui.large.segment.intro {
+  background: black;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.ui.segment.pictureBox {
+  height: 80%;
+  background: black;
+}
 
 .ui.segment.pictureBox {
   height: 80%;
+  background: black;
 }
+
+h3 {
+  text-align: center;
+  color: white;
+  font-size: 1.5em
+}
+
 
 /************* Make Presentations **********/
 .ui.ribbon.label {
