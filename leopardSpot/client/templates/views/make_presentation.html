@@ -1,28 +1,29 @@
 <template name="makePresentation">
 
-  <div class="ui large segment">
-    <div class="ui input">
-      <textarea  placeholder="Type slide markdown here, separating slides with an. For an online markdown editor, use http://dillinger.io/"></textarea>
-    </div>
+  <div class="ui large segment textEditor">
     <a class="ui ribbon label">Your Presentation</a>
+    <textarea  placeholder="Type slide markdown here, separating slides with an. For an online markdown editor, use http://dillinger.io/"></textarea>
+
   </div>
 
-  <div class="ui steps">
-    <a class="step">
-      <div class="content">
-        <div class="title">Save Presentation</div>
-      </div>
-    </a>
-    <a class="active step">
-      <div class="content">
-        <div class="title">New Presentation</div>
-      </div>
-    </a>
-     <a class="step">
-      <div class="content">
-        <div class="title">Presentation Mode</div>
-      </div>
-    </a>
+  <div class="segment presentationCommands">
+    <div class="ui steps presentationCommands">
+      <a class="step">
+        <div class="content">
+          <div class="title">Save Presentation</div>
+        </div>
+      </a>
+      <a class="active step">
+        <div class="content">
+          <div class="title">New Presentation</div>
+        </div>
+      </a>
+       <a class="step">
+        <div class="content">
+          <div class="title">Presentation Mode</div>
+        </div>
+      </a>
+    </div>
   </div>
 
 
