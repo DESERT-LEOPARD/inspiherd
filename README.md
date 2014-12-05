@@ -20,7 +20,7 @@
 
 ## Usage
 
-- Visit <url>
+- Visit (enter URL here)
 - (optional) Create an account
 - Select "Make New Presentation"
 - Create your slide deck in Markdown
