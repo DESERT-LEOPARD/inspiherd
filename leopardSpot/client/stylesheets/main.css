@@ -1,15 +1,18 @@
 
-.hidden{
-  opacity: 0;
+
+/************ Some or All Layout Pages **************/
+
+.jumbotron{
+  text-align: center;
+  line-height: 5em;
 }
 
 body {
   background-image: url("../assets/animalPrint1.gif");
 }
 
-
-.jumbotron{
-  text-align: center;
+.hidden{
+  opacity: 0;
 }
 
 .jumbotron h2{
@@ -19,7 +22,6 @@ body {
 
 
 .ui.large.inverted.menu.header {
-  line-height: 5em;
   margin-bottom: 0;
 }
 
@@ -31,36 +33,27 @@ body {
   top: 2em;
 }
 
+.ui.steps {
+  margin-top: 2%;
+}
+
+/*********** Intro Page ***************/
+
+.ui.segment.pictureBox {
+  height: 80%;
+}
+
+/************* Make Presentations **********/
 .ui.ribbon.label {
   position: absolute;
   left: -1rem;
   top : .5rem;
 }
 
-.ui.segment.savedPresentations {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  top: 2em;
-}
-
-.ui.segment.pictureBox {
-  height: 80%;
-}
-
-.ui.steps {
-  margin-top: 2%;
-}
-
-.ui.large.form.segment {
-  width: 40%;
-}
 
 .ui.large.segment.textEditor {
   padding: 0;
 }
-
-
 
 textarea .textEditor {
 
@@ -84,6 +77,15 @@ textarea .textEditor {
   margin-right: auto;
   text-align: center;
 }
-.access-denied {
-  /*add styles*/
+/************ Saved Presentations ****************/
+
+.ui.segment.savedPresentations {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 2em;
+}
+
+.ui.large.form.segment {
+  width: 40%;
 }
