@@ -6,13 +6,12 @@
   <h1 id="header">Democra.me</h1>
 
   {{> hello}}
+  
 </body>
 
 <template name="hello">  
-
-  <div id="voteA" class="ui huge top attached teal button">A</div>
-  <div><a href="{{pathFor 'polling'}}" class="discuss btn btn-default">buttonHere</a></div>
-
+<!--This ahref is incomplete, I am trying to route to the polling page-->
+  <a href="{{pathFor 'polling'}}"><div id="voteA" class="ui huge top attached teal button">A</div></a>
   <div class="ui attached segment"></div>
   <div id="voteB" class="ui huge bottom attached teal button">B</div>
   <div class="ui attached segment"></div>
