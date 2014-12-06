@@ -26,12 +26,16 @@ SlideDecks.deny({
 
 Meteor.methods({
   'createSlideDeck': function(slideDeck) {
-    check(Meteor.userId(), String);
     check(slideDeck, {
-
+      // [TODO]
+      // title: String,
+      mdRaw: String
     });
-  },
 
+    slideDeck.mdSlides = slideDeck.mdRaw.split('* * *');
+    slideDeck.owner = Meteor.userId();
 
-
+    var id = SlideDecks.insert(slideDeck);
+    Router.go('/slides/'+id);
+  }
 });

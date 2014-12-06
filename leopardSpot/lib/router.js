@@ -27,3 +27,14 @@ Router.route('/create',{
 Router.route('/list',{
   name: 'savedPresentations'
 });
+
+Router.route('slides/:_sd_id/:_page?', function(){
+  this.layout('slideLayout');
+
+  var params = this.params;
+  var _page = parseInt(params._page ? params._page : 1);
+  console.log('@$@$@');
+  Session.set("_sd_id", params._sd_id);
+  Session.set("_page", _page);
+  this.render('slides');
+});
