@@ -1,4 +1,4 @@
 //Publishing all slides, for now
-Meteor.publish('slides', function(){
-  return Slides.find();
+Meteor.publish('slideDecks', function(id){
+  return SlideDecks.find({_id:id});
 });

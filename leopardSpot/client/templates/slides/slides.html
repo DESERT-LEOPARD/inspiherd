@@ -1,0 +1,21 @@
+<template name="slides">
+  
+  <style type="text/css">
+    .slide{
+      opacity: {{opacity}};
+    }
+  </style>
+  <div id="counter" class="ui huge label">
+    {{index}}/{{slideLength}}
+  </div>
+  <div class="slide">
+    
+  {{#markdown}}
+  {{mk index}}
+  {{/markdown}}
+  </div>
+  
+  <div class="ui button" id="prev">prev</div>
+  <div class="ui button" id="next">next</div>
+
+</template>
