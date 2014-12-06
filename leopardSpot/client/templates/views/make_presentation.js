@@ -1,7 +1,12 @@
 Template.makePresentation.events({
   'submit': function(event, template) {
     var mdRaw = $(event.target).find('#mdRawTextArea').val();
-    Meteor.call('createSlideDeck', {'mdRaw':mdRaw});
     event.preventDefault();
+    
+    Meteor.call('createSlideDeck', {'mdRaw':mdRaw}, function(err, id) {
+      Router.go('/slides/'+id);
+    });
+    
+
   }
 });

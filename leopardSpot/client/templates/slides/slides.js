@@ -1,35 +1,36 @@
-Meteor.subscribe('slideDecks', Session.get('_sd_id'));
-
 (function(){
-  console.log('#id#', Session.get('_sd_id'));
-  console.log('#', SlideDecks.find() );
-  console.log('#', SlideDecks.findOne({_id:Session.get('_sd_id')} ) );
-  Session.setDefault("index", 1);
+  
+  Session.setDefault("_page", 1);
   Session.setDefault("slideLength", 3);
   Session.setDefault("opacity", 0);
 
-  var validateIndex = function(ind) {
-    if ( ind < 1 ) {
+  var validatePageNum = function(pg) {
+    if ( pg < 1 ) {
       return false;
-    } else if ( ind > Session.get('slideLength') ) {
+    } else if ( pg > Session.get('slideLength') ) {
       return false;
     }
     return true;
   }
 
+  Template.slides.created = function() {
+    Template.slides._mdSlides = SlideDecks.findOne({_id:Session.get('_sd_id')}).mdSlides;
+    console.log('$$', Template.slides._mdSlides);
+    Session.set("slideLength", Template.slides._mdSlides.length);
+    Template.slides._mdSlides.unshift('');
+  }
+
   Template.slides.helpers({
-    index: function () {
-      return Session.get("index");
+    _page: function () {
+      return Session.get("_page");
     },
     mk: function(n) {
       var slides = [''];
-      slides.push("#LeopardSpot\n__such slides__\n##*so amazing*\n* very fancy\n\n![doge](http://www.fimfiction-static.net/images/avatars/134636_256.jpg)");
       slides.push("#Words\nyeap, hella cool.\n");
       slides.push("#I mean\n##friendship is magic\n###boom\n![magic](http://img1.wikia.nocookie.net/__cb20120311061118/mlpfanart/images/1/10/Fluffy_pony.png)");
       slides.push("#MUNI\n##TRUE\n![muni](https://i.imgflip.com/csv1f.jpg)");
-
-      Session.set("slideLength", slides.length-1);
-      return slides[n];
+      
+      return Template.slides._mdSlides[n];
     },
     opacity: function () {
       return Session.get("opacity");
@@ -44,24 +45,24 @@ Meteor.subscribe('slideDecks', Session.get('_sd_id'));
     Session.set("opacity",100);
   }
 
-  var goPage = function(ind) {
-    if ( !validateIndex(ind) ) return ;
+  var goPage = function(pg) {
+    if ( !validatePageNum(pg) ) return ;
 
     Session.set("opacity",0);
     
     Meteor.setTimeout(function(){
-      Router.go('/slides/'+ind);
+      Router.go('/slides/'+Session.get("_sd_id")+"/"+pg);
       Session.set("opacity",100)
     },200);
   }
 
 
   var next = function() {
-    goPage(Session.get("index") + 1);
+    goPage(Session.get("_page") + 1);
   }
 
   var prev = function() {
-    goPage(Session.get("index") - 1);
+    goPage(Session.get("_page") - 1);
   }
 
   Template.slides.events({

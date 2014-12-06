@@ -1,3 +1,7 @@
+if ( Meteor.isClient ) {
+  Meteor.subscribe('slideDecks');
+}
+
 Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
@@ -33,8 +37,7 @@ Router.route('slides/:_sd_id/:_page?', function(){
 
   var params = this.params;
   var _page = parseInt(params._page ? params._page : 1);
-  console.log('@$@$@');
   Session.set("_sd_id", params._sd_id);
   Session.set("_page", _page);
-  this.render('slides');
+  this.render('slides',{data: {_sd_id:params._sd_id}});
 });
