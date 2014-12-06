@@ -35,6 +35,10 @@ body {
   margin-bottom: 0;
 }
 
+h1 {
+  color:#66FFFF;
+}
+
 .menu.leoparNav {
   height: 100%;
 }
@@ -45,11 +49,18 @@ body {
   color: white;
 }
 
+.ui.link.inverted.menu .item:hover, .ui.inverted.menu .link.item:hover, .ui.inverted.menu a.item:hover, .ui.inverted.menu .dropdown.item:hover {
+  outline: 0;
+  background-color: #66FFFF;
+  color: black;
+}
+
 .ui.large.menu .item.leopardNav {
   line-height: 2.5rem;
   font-size: 1.5rem;
   color: #66FFFF;
 }
+
 
 
 /*********** Intro Page ***************/
@@ -74,6 +85,10 @@ h3 {
   text-align: center;
   color: white;
   font-size: 1.5em
+}
+
+.column {
+  border: 1em;
 }
 
 
@@ -111,6 +126,11 @@ textarea .textEditor {
   margin-right: auto;
   text-align: center;
 }
+
+/************ Login/ Signup ***********************/
+.ui.labeled.input:not([class*="corner labeled"]):not([class*="right labeled"]) > input {
+  border-left: solid;
+}
 /************ Saved Presentations ****************/
 
 .ui.segment.savedPresentations {
@@ -123,3 +143,5 @@ textarea .textEditor {
 .ui.large.form.segment {
   width: 40%;
 }
+
+
