@@ -36,6 +36,6 @@ Meteor.methods({
     slideDeck.owner = Meteor.userId();
 
     var id = SlideDecks.insert(slideDeck);
-    Router.go('/slides/'+id);
+    return id;
   }
 });
