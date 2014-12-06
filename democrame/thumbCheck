@@ -10,7 +10,7 @@
 </body>
 
 <template name="hello">  
-<!--This ahref is incomplete, I am trying to route to the polling page-->
+
   <a href="{{pathFor 'polling'}}"><div id="voteA" class="ui huge top attached teal button">A</div></a>
   <div class="ui attached segment"></div>
   <div id="voteB" class="ui huge bottom attached teal button">B</div>
