@@ -22,12 +22,11 @@ body {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  height: 70%;
   top: 2em;
 }
 
-.ui.steps {
-  margin-top: 2%;
+.ui.steps.intro {
+  margin-top: 5%;
 }
 
 /*************Header****************/
@@ -36,8 +35,24 @@ body {
   margin-bottom: 0;
 }
 
+h1 {
+  color:#66FFFF;
+}
+
 .menu.leoparNav {
   height: 100%;
+}
+
+.ui.inverted.menu a.item:active, .ui.inverted.menu .dropdown.item:active, .ui.inverted.menu .link.item:active, .ui.inverted.menu a.item:active {
+  outline: 0;
+  background-color: #66FFFF;
+  color: white;
+}
+
+.ui.link.inverted.menu .item:hover, .ui.inverted.menu .link.item:hover, .ui.inverted.menu a.item:hover, .ui.inverted.menu .dropdown.item:hover {
+  outline: 0;
+  background-color: #66FFFF;
+  color: black;
 }
 
 .ui.large.menu .item.leopardNav {
@@ -46,14 +61,36 @@ body {
   color: #66FFFF;
 }
 
-.ui.large.menu .item {
 
-}
+
 /*********** Intro Page ***************/
+
+.ui.large.segment.intro {
+  background: black;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.ui.segment.pictureBox {
+  height: 80%;
+  background: black;
+}
 
 .ui.segment.pictureBox {
   height: 80%;
+  background: black;
 }
+
+h3 {
+  text-align: center;
+  color: white;
+  font-size: 1.5em
+}
+
+.column {
+  border: 1em;
+}
+
 
 /************* Make Presentations **********/
 .ui.ribbon.label {
@@ -89,6 +126,11 @@ textarea .textEditor {
   margin-right: auto;
   text-align: center;
 }
+
+/************ Login/ Signup ***********************/
+.ui.labeled.input:not([class*="corner labeled"]):not([class*="right labeled"]) > input {
+  border-left: solid;
+}
 /************ Saved Presentations ****************/
 
 .ui.segment.savedPresentations {
@@ -101,3 +143,5 @@ textarea .textEditor {
 .ui.large.form.segment {
   width: 40%;
 }
+
+

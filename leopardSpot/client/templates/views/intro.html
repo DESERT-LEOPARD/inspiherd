@@ -1,38 +1,38 @@
 <template name="intro">
  <!-- background with three boxes -->
-  <div class="ui large segment">
+  <div class="ui large segment intro">
     <div class="ui three column grid">
       <div class="column">
         <div class="ui segment pictureBox">
-          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTaFdNtoRAszxfZMiZtbGMpOFJI5N1hBj1LcKkW17EaAJOV7dJg" class="ui fluid image">
-          <h3>Save your presentations in the cloud</h3>
+          <img src="assets/screen.gif" class="ui fluid image">
+          <h3>Make and save presentations online </h3>
         </div>
       </div>
       <div class="column">
         <div class="ui segment pictureBox">
-          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRZddbpzkjPgsMYpwFmORlKDs5fEBOz_wNPHCnNeQ7xOdyLhdwYFUmJ4sec" class="ui fluid image">
-          <h3> Get Realtime Feedback</h3>
+          <img src="assets/poll.gif" class="ui fluid image">
+          <h3> Get realtime feedback from your audience</h3>
         </div>
       </div>
       <div class="column">
         <div class="ui segment pictureBox">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwFURbPMOqBMMWP1B8Rp8J2owQ0wfcAQxrwKNLyONAXZ55TnBz" class="ui fluid image">
-          <h3>Make fun and interactive presentations</h3>
+          <img src="assets/phone.gif" class="ui fluid image">
+          <h3>Control presentations with the swipe of a finger</h3>
         </div>
       </div>
     </div>
-    <div class="ui steps">
-      <a class="step" href="{{pathFor 'savedPresentations'}}">
-        <div class="content">
-          <div class="title">View Saved Presentations</div>
-        </div>
-      </a>
-      <a class="active step" href="{{pathFor 'makePresentation'}}">
-        <div class="content">
-          <div class="title"> Make New Presentation</div>
-        </div>
-      </a>
-    </div>
+  </div>
+  <div class="ui steps intro">
+    <a class="step" href="{{pathFor 'savedPresentations'}}">
+      <div class="content">
+        <div class="title">View Saved Presentations</div>
+      </div>
+    </a>
+    <a class="active step" href="{{pathFor 'makePresentation'}}">
+      <div class="content">
+        <div class="title"> Make New Presentation</div>
+      </div>
+    </a>
   </div>
 
 </template>
