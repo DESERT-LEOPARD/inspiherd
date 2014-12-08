@@ -1,8 +1,3 @@
-if ( Meteor.isClient ) {
-  Meteor.subscribe('slideDecks');
-  Meteor.subscribe('presentSessions');
-}
-
 Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
