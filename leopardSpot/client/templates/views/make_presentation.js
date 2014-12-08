@@ -12,6 +12,5 @@ Template.makePresentation.events({
       });
     });
     
-
   }
 });

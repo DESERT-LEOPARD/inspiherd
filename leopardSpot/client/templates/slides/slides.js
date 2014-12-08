@@ -82,7 +82,7 @@
     Meteor.setTimeout(function(){
       PresentSessions.update({_id:Session.get('_ps_id')}, {$set: {'page': pg}});
       Session.set('_page',pg);
-      Session.set("opacity",100)
+      Session.set("opacity",100);
     },200);
   }
 
@@ -91,7 +91,7 @@
     
     Meteor.setTimeout(function(){
       Router.go('/slides/'+Session.get("_sd_id")+"/"+pg);
-      Session.set("opacity",100)
+      Session.set("opacity",100);
     },200);
   }
 
