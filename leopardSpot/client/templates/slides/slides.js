@@ -15,6 +15,8 @@
     }
 
     if ( foundSessionOrNonSession ) {
+      Meteor.subscribe('slideDecks',{_id:Session.get('_sd_id')});
+
       var foundSlideDeck = SlideDecks.findOne({_id:Session.get('_sd_id')});
       if ( foundSlideDeck ) {
         _mdSlides = foundSlideDeck.mdSlides;
