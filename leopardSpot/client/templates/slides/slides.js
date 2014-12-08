@@ -75,7 +75,7 @@
         stopwatch++;
         Session.set('stopwatch', stopwatch);
       },1000);
-      if(stopwatch >= 60){
+      if(stopwatch >= 60){                // sets minutes
         if(stopwatch >= 3600) {
           // console.log('hours');
           hours = Math.floor(stopwatch / 3600);
