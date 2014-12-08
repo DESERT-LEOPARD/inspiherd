@@ -22,13 +22,18 @@ body {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  top: 2em;
+  top: 4em;
 }
 
-.ui.steps.intro {
+.ui.steps {
   margin-top: 5%;
 }
 
+.ui.steps .step.{
+  font-weight: bold;
+  border-width: 1.2rem;
+  font-size: 1.2rem;
+}
 /*************Header****************/
 
 .ui.large.inverted.menu.leopardNav {
@@ -39,20 +44,30 @@ h1 {
   color:#66FFFF;
 }
 
-.menu.leoparNav {
-  height: 100%;
+h2 {
+  color: #CBFFCC;
+  font-size: 2em;
+  padding-left: 2.3em;
+  line-height: 0;
 }
 
-.ui.inverted.menu a.item:active, .ui.inverted.menu .dropdown.item:active, .ui.inverted.menu .link.item:active, .ui.inverted.menu a.item:active {
-  outline: 0;
-  background-color: #66FFFF;
+.item.leopardNav.title {
+  text-align: center;
+  padding: 0;
+  margin-top: .5%;
+}
+
+.ui.inverted.menu a.item.leopardNav.title:active, .ui.inverted.menu a.item.leopardNav.title:hover {
+  outline: none;
+  background-color: black;
   color: white;
 }
 
-.ui.link.inverted.menu .item:hover, .ui.inverted.menu .link.item:hover, .ui.inverted.menu a.item:hover, .ui.inverted.menu .dropdown.item:hover {
+
+.ui.inverted.menu a.item:active, .ui.inverted.menu .dropdown.item:active, .ui.inverted.menu .link.item:active, .ui.inverted.menu a.item:active, .ui.link.inverted.menu .item:hover, .ui.inverted.menu .link.item:hover, .ui.inverted.menu a.item:hover, .ui.inverted.menu .dropdown.item:hover  {
   outline: 0;
   background-color: #66FFFF;
-  color: black;
+  color: white;
 }
 
 .ui.large.menu .item.leopardNav {
@@ -66,24 +81,23 @@ h1 {
 /*********** Intro Page ***************/
 
 .ui.large.segment.intro {
+  background: none;
+  border: none;
+}
+.ui.segment.pictureBox {
+  height: 80%;
   background: black;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
-}
-.ui.segment.pictureBox {
-  height: 80%;
-  background: black;
-}
-
-.ui.segment.pictureBox {
-  height: 80%;
-  background: black;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 h3 {
   text-align: center;
   color: white;
+  font-weight: 100;
   font-size: 1.5em
 }
 
@@ -91,6 +105,9 @@ h3 {
   border: 1em;
 }
 
+div .column {
+  border: none;
+}
 
 /************* Make Presentations **********/
 .ui.ribbon.label {
@@ -127,6 +144,17 @@ textarea .textEditor {
   text-align: center;
 }
 
+.ui.form textarea{
+  height: 25rem;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  font-size: 1.2em;
+}
+
+.ui.button.create {
+  font-size: 1.3em;
+}
 /************ Login/ Signup ***********************/
 .ui.labeled.input:not([class*="corner labeled"]):not([class*="right labeled"]) > input {
   border-left: solid;
@@ -141,7 +169,12 @@ textarea .textEditor {
 }
 
 .ui.large.form.segment {
-  width: 40%;
+  width: 60%;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
+
+
 
 

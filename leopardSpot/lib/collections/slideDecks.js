@@ -1,6 +1,8 @@
 SlideDecks = new Mongo.Collection('slideDecks');
-
-SlideDecks.allow({
+// this is executed on both client and server side. Has two functionalities. On server-
+//side it will populate a mongo-DB database. On client side, it will create a 
+// mini-mongo and sync it with the server side
+SlideDecks.allow({ // sends permission to allow client side to make these alterations to the collection
   update: function (userId, doc, fields, modifier) {
     // can only change your own documents
     return doc.owner === userId;
@@ -12,7 +14,7 @@ SlideDecks.allow({
   fetch: ['owner']
 });
 
-SlideDecks.deny({
+SlideDecks.deny({ // denies permission to client to perform these actions
   update: function (userId, docs, fields, modifier) {
     // can't change owners
     return _.contains(fields, 'owner');
@@ -32,11 +34,13 @@ Meteor.methods({
       mdRaw: String
     });
 
-    slideDeck.mdSlides = slideDeck.mdRaw.split('* * *');
+    slideDeck.mdSlides = slideDeck.mdRaw.split('* * *'); // mdRaw is the text contained within the textarea. This splits it
     slideDeck.owner = Meteor.userId();
 
     // Slide Deck id
     var sd_id = SlideDecks.insert(slideDeck);
     return sd_id;
+
+
   }
 });
