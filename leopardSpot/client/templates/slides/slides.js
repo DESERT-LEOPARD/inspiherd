@@ -5,6 +5,7 @@
 
   ID.id = Session.get('_ps_id') + '_stopwatch';
   Session.set(Session.get('_ps_id') + '_stopwatch', localStorage.getItem(ID.id));
+  // Session.setDefault('stopwatch', 0);
 
   var fetchDep = new Tracker.Dependency;
   var handle = Tracker.autorun(function() {
@@ -30,7 +31,6 @@
         // handle.stop();
       }
     }
-
 
   });
 
