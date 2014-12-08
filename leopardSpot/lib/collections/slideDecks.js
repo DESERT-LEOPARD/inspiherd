@@ -40,7 +40,7 @@ if ( Meteor.isServer ) {
     'createSlideDeck': function(slideDeck) {
       check(slideDeck, {
         // [TODO]
-        // title: String,
+        title: String,
         mdRaw: String
       });
 
