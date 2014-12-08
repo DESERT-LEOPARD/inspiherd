@@ -23,12 +23,10 @@
         // handle.stop();
       }
     }
-
+    Session.set('stopwatch', 0);
   });
 
   var pageDep = new Tracker.Dependency;
-
-  Session.setDefault("stopwatch", 0);
 
   var validatePageNum = function(pg) {
     if ( pg < 1 ) {
@@ -37,14 +35,6 @@
       return false;
     }
     return true;
-  }
-
-
-  Template.slides.created = function() { // invoked every time before a template is rendered, and fetches data from the Mongo server.
-    Template.slides._mdSlides = SlideDecks.findOne({_id:Session.get('_sd_id')}).mdSlides;
-    console.log('$$', Template.slides._mdSlides);
-    Session.set("slideLength", Template.slides._mdSlides.length);
-    Template.slides._mdSlides.unshift('');
   }
 
   Template.slides.helpers({
@@ -75,7 +65,7 @@
         stopwatch++;
         Session.set('stopwatch', stopwatch);
       },1000);
-      if(stopwatch >= 60){
+      if(stopwatch >= 60){                // sets minutes
         if(stopwatch >= 3600) {
           // console.log('hours');
           hours = Math.floor(stopwatch / 3600);
@@ -89,7 +79,7 @@
         // console.log('seconds');
         seconds = stopwatch;
       }
-      console.log(hours, minutes, seconds);
+      // console.log(hours, minutes, seconds);
       return (hours === undefined ? '00:' : (hours < 10? '0' + hours + ":" : hours + ":")) +
              (minutes === undefined ? '00:' : (minutes < 10 ? '0' + minutes + ":" : minutes + ":")) +
              (seconds < 10 ? '0' + seconds : seconds);
