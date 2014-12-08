@@ -65,7 +65,8 @@
         stopwatch++;
         Session.set('stopwatch', stopwatch);
       },1000);
-      if(stopwatch >= 60){                // sets minutes
+
+      if(stopwatch >= 60){
         if(stopwatch >= 3600) {
           // console.log('hours');
           hours = Math.floor(stopwatch / 3600);
@@ -79,7 +80,7 @@
         // console.log('seconds');
         seconds = stopwatch;
       }
-      // console.log(hours, minutes, seconds);
+
       return (hours === undefined ? '00:' : (hours < 10? '0' + hours + ":" : hours + ":")) +
              (minutes === undefined ? '00:' : (minutes < 10 ? '0' + minutes + ":" : minutes + ":")) +
              (seconds < 10 ? '0' + seconds : seconds);
