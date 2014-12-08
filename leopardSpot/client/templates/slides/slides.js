@@ -3,6 +3,7 @@
   Session.setDefault("_page", 1);
   Session.setDefault("slideLength", 3);
   Session.setDefault("opacity", 0);
+  Session.setDefault("stopwatch", 0);
 
   var validatePageNum = function(pg) {
     if ( pg < 1 ) {
@@ -37,6 +38,19 @@
     },
     slideLength: function(){
       return Session.get('slideLength');
+    },
+    stopwatch: function(time) {
+      console.log('stopwatch called');
+      // Session.set('stopwatch', increment);
+      var increment = Session.get('stopwatch');
+      Meteor.setInterval(function(){
+        increment++;
+        Session.set('stopwatch', increment);
+        if(increment > 60){
+          
+        }
+      },1000);
+      return increment;
     }
     
   });
@@ -52,7 +66,7 @@
     
     Meteor.setTimeout(function(){
       Router.go('/slides/'+Session.get("_sd_id")+"/"+pg);
-      Session.set("opacity",100)
+      Session.set("opacity",100);
     },200);
   }
 
@@ -64,6 +78,37 @@
   var prev = function() {
     goPage(Session.get("_page") - 1);
   }
+
+  // var stopW = function(){
+  //   var seconds = 0,
+  //       minutes = 0,
+  //       hours = 0;
+  //   var add = function() {
+  //       seconds++;
+  //       if (seconds >= 60) {
+  //           seconds = 0;
+  //           minutes++;
+  //           if (minutes >= 60) {
+  //               minutes = 0;
+  //               hours++;
+  //           }
+  //       }
+  //       // time.textContent = (hours ? (hours > 9 ? hours : "0" + hours)
+  //       //                     : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes)
+  //       //                     : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+  //           document.getElementById("stopwatch").textContext = '01:00:00';
+
+  //       timer();
+  //   };
+
+  //   function timer() {
+  //       t = setTimeout(add, 1000);
+  //   }
+  //   timer();
+  // }
+  // stopW();
+  // document.getElementById("stopwatch").textContext = '01:00:00';
+
 
   Template.slides.events({
     'click #next': function () {
