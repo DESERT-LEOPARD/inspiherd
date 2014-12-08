@@ -25,10 +25,6 @@
       return Session.get("_page");
     },
     mk: function(n) {
-      var slides = [''];
-      slides.push("#Words\nyeap, hella cool.\n");
-      slides.push("#I mean\n##friendship is magic\n###boom\n![magic](http://img1.wikia.nocookie.net/__cb20120311061118/mlpfanart/images/1/10/Fluffy_pony.png)");
-      slides.push("#MUNI\n##TRUE\n![muni](https://i.imgflip.com/csv1f.jpg)");
       
       return Template.slides._mdSlides[n];
     },
