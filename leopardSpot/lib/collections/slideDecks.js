@@ -58,6 +58,8 @@ if ( Meteor.isServer ) {
 
 if ( Meteor.isClient ) {
   Tracker.autorun(function(){
-    Meteor.subscribe('slideDecks',{_id:Session.get('_sd_id')});
+    if ( Meteor.userId() ) {
+      Meteor.subscribe('slideDecks',{owner:Meteor.userId()});
+    }
   });
 }
