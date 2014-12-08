@@ -28,6 +28,8 @@
 
   var pageDep = new Tracker.Dependency;
 
+  Session.setDefault("stopwatch", 0);
+
   var validatePageNum = function(pg) {
     if ( pg < 1 ) {
       return false;
@@ -45,7 +47,6 @@
     Template.slides._mdSlides.unshift('');
   }
 
-
   Template.slides.helpers({
     _page: function() {
       return Session.get("_page");
@@ -61,6 +62,37 @@
     },
     opacity: function () {
       return Session.get("opacity");
+
+    },
+    slideLength: function(){
+      return Session.get('slideLength');
+    },
+    stopwatch: function(time) {
+      var hours, minutes, seconds;
+      // console.log('stopwatch called');
+      var stopwatch = Session.get('stopwatch');
+      Meteor.setInterval(function(){
+        stopwatch++;
+        Session.set('stopwatch', stopwatch);
+      },1000);
+      if(stopwatch >= 60){
+        if(stopwatch >= 3600) {
+          // console.log('hours');
+          hours = Math.floor(stopwatch / 3600);
+          minutes = Math.floor((stopwatch - (hours * 60) * 60) / 60);
+        }
+        // console.log('minutes');
+        minutes = minutes || Math.floor(stopwatch / 60);
+        seconds = stopwatch - (minutes * 60);
+      }
+      else {
+        // console.log('seconds');
+        seconds = stopwatch;
+      }
+      console.log(hours, minutes, seconds);
+      return (hours === undefined ? '00:' : (hours < 10? '0' + hours + ":" : hours + ":")) +
+             (minutes === undefined ? '00:' : (minutes < 10 ? '0' + minutes + ":" : minutes + ":")) +
+             (seconds < 10 ? '0' + seconds : seconds);
     }
     
   });
@@ -124,5 +156,4 @@
     }
   });
 
-  
 })();

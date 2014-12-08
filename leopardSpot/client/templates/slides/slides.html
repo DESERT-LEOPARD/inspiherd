@@ -5,6 +5,19 @@
     .slide{
       opacity: {{opacity}}; 
     } /*property is here for transitions */
+
+    .ui.button.stopwatch{
+        display: inline-block;
+        border-radius: 5px;
+        opacity: 80;
+        padding: 8px;
+        margin: 15px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 120px;
+        height: 30px;
+    }
   </style>
 
 
@@ -22,5 +35,8 @@
 
   </div>
   
-
+  <div class="ui button stopwatch">
+    <i class="wait icon"></i>
+    <time id="stopwatch">{{ stopwatch }}</time>
+  </div>
 </template>
