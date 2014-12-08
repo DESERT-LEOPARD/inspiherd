@@ -11,9 +11,7 @@ if ( Meteor.isServer ) {
 
   PresentSessions.allow({
     update:function (userId, doc, fields, modifier) {
-      // [TODO]
-      // return doc.presenter_id === userId;
-      return true;
+      return doc.presenter_id === userId;
     }
 
   });

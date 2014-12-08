@@ -2,13 +2,14 @@
   
   var _mdSlides;
 
-  var fetchDep = window.fett = new Tracker.Dependency;
-  var handle = Tracker.autorun(function () {
+  var fetchDep = new Tracker.Dependency;
+  var handle = Tracker.autorun(function() {
     var foundSessionOrNonSession = true;
     if ( Session.get('isSession') ) {
       foundSessionOrNonSession = PresentSessions.findOne({_id:Session.get('_ps_id')})
       if ( foundSessionOrNonSession ) {
         Session.set('_sd_id', foundSessionOrNonSession.slideDeck_id);
+        Session.set('_presenter_id', foundSessionOrNonSession.presenter_id);
         Session.set('_page', foundSessionOrNonSession.page);
       }
     }
@@ -26,8 +27,6 @@
     Session.set('stopwatch', 0);
   });
 
-  var pageDep = new Tracker.Dependency;
-
   var validatePageNum = function(pg) {
     if ( pg < 1 ) {
       return false;
@@ -37,7 +36,17 @@
     return true;
   }
 
+  var isPresentor = function() {
+    fetchDep.depend();
+    if ( Session.get('isSession') ) {
+      return Session.get('_presenter_id') === Meteor.userId();
+    }
+    return true;
+  }
+
   Template.slides.helpers({
+    isPresentor: isPresentor,
+
     _page: function() {
       return Session.get("_page");
     },
@@ -137,14 +146,20 @@
     }
   });
 
-  UI.body.events({
-    'keydown': function(e){
-      if ( e.which === 39 ) { // right arrow key
-        next();
-      } else if ( e.which === 37 ) { // left arrow key
-        prev();
-      }
+  var uiBodyKeyBindingHandler = Tracker.autorun(function() {
+    if ( isPresentor() ) {
+      UI.body.events({
+        'keydown': function(e){
+          if ( e.which === 39 ) { // right arrow key
+            next();
+          } else if ( e.which === 37 ) { // left arrow key
+            prev();
+          }
+        }
+      });
+      // uiBodyKeyBindingHandler.stop();
     }
   });
+  
 
 })();
