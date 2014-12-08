@@ -31,6 +31,12 @@
       }
     }
 
+    if(localStorage.getItem('stopwatch') == 'NaN') {
+      console.log('setting local stopwatch..');
+      localStorage.setItem('stopwatch', 0);
+    }
+    Session.set('stopwatch', localStorage.getItem('stopwatch'));
+
   });
 
   var validatePageNum = function(pg) {
