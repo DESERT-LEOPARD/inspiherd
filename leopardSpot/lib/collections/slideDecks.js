@@ -41,5 +41,6 @@ Meteor.methods({
     var sd_id = SlideDecks.insert(slideDeck);
     return sd_id;
 
+
   }
 });
