@@ -1,14 +1,12 @@
 if ( Meteor.isClient ) {
   Meteor.subscribe('slideDecks');
+  Meteor.subscribe('presentSessions');
 }
 
 Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound',
-  // waitOn: function(){
-  //   return Meteor.subscribe('slides');
-  // }
 });
 
 
@@ -35,9 +33,17 @@ Router.route('/list',{
 Router.route('slides/:_sd_id/:_page?', function(){
   this.layout('slideLayout');
 
-  var params = this.params;
-  var _page = parseInt(params._page ? params._page : 1);
-  Session.set("_sd_id", params._sd_id);
-  Session.set("_page", _page);
-  this.render('slides',{data: {_sd_id:params._sd_id}});
+  var _page = parseInt(this.params._page ? this.params._page : 1);
+  Session.set('_sd_id', this.params._sd_id);
+  Session.set('_page', _page);
+  Session.set('isSession', false);
+  this.render('slides');
+});
+
+Router.route('sessions/:_ps_id', function(){
+  this.layout('slideLayout');
+
+  Session.set('_ps_id', this.params._ps_id);
+  Session.set('isSession', true);
+  this.render('slides');
 });

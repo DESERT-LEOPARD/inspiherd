@@ -35,7 +35,8 @@ Meteor.methods({
     slideDeck.mdSlides = slideDeck.mdRaw.split('* * *');
     slideDeck.owner = Meteor.userId();
 
-    var id = SlideDecks.insert(slideDeck);
-    return id;
+    // Slide Deck id
+    var sd_id = SlideDecks.insert(slideDeck);
+    return sd_id;
   }
 });
