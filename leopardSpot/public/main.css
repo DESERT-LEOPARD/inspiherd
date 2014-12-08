@@ -83,6 +83,7 @@ h2 {
 .ui.large.segment.intro {
   background: none;
   border: none;
+  box-shadow: none;
 }
 .ui.segment.pictureBox {
   height: 80%;
@@ -109,16 +110,36 @@ div .column {
   border: none;
 }
 
-/************* Make Presentations **********/
-.ui.ribbon.label {
-  position: absolute;
-  left: -1rem;
-  top : .5rem;
-}
-
+/************* Make Presentations **********/   
 
 .ui.large.segment.textEditor {
   padding: 0;
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.ui.labeled.input.textEditor {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+.ui.label.textEditor {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  width: 30%;
+}
+
+.ui.labeled.input.textEditor:not([class*="corner labeled"]):not([class*="right labeled"]) > input {
+  border-radius: 0px 15px 15px 0px;
+  -moz-border-radius: 0px 15px 15px 0px;
+  -webkit-border-radius: 0px 15px 15px 0px;
+  border-left: 2px solid rgba(39, 41, 43, 0.95);
 }
 
 textarea .textEditor {
@@ -153,7 +174,13 @@ textarea .textEditor {
 }
 
 .ui.button.create {
+  margin-top: 2em;
   font-size: 1.3em;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: white;
+  width: 10em;
 }
 /************ Login/ Signup ***********************/
 .ui.labeled.input:not([class*="corner labeled"]):not([class*="right labeled"]) > input {
