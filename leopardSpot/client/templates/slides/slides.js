@@ -13,7 +13,7 @@
     return true;
   }
 
-  Template.slides.created = function() {
+  Template.slides.created = function() { // invoked every time before a template is rendered, and fetches data from the Mongo server.
     Template.slides._mdSlides = SlideDecks.findOne({_id:Session.get('_sd_id')}).mdSlides;
     console.log('$$', Template.slides._mdSlides);
     Session.set("slideLength", Template.slides._mdSlides.length);
