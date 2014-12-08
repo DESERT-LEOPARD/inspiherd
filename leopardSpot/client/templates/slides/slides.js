@@ -1,6 +1,7 @@
 (function(){
   
   var _mdSlides;
+  // Session.setDefault('stopwatch', 0);
 
   var fetchDep = new Tracker.Dependency;
   var handle = Tracker.autorun(function() {
@@ -26,7 +27,12 @@
         // handle.stop();
       }
     }
-    Session.set('stopwatch', 0);
+    if(localStorage.getItem('stopwatch') == 'NaN') {
+      console.log('setting local stopwatch..');
+      localStorage.setItem('stopwatch', 0);
+    }
+    Session.set('stopwatch', localStorage.getItem('stopwatch'));
+
   });
 
   var validatePageNum = function(pg) {
@@ -74,6 +80,8 @@
       var stopwatch = Session.get('stopwatch');
       Meteor.setInterval(function(){
         stopwatch++;
+        localStorage.setItem("stopwatch", stopwatch);
+        console.log(localStorage.getItem('stopwatch'));
         Session.set('stopwatch', stopwatch);
       },1000);
 
