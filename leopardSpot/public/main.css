@@ -14,9 +14,6 @@ body {
   opacity: 0;
 }
 
-.jumbotron h2{
-  font-weight: 100;
-}
 
 .ui.large.segment {
   width: 70%;
@@ -76,8 +73,33 @@ h2 {
   color: #66FFFF;
 }
 
+/***********Access Denied *************/
 
 
+div .access-denied.jumbotron {
+  margin-top: 2em;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #e0e0e0; 
+  background: #FFF5F5;
+}
+
+.jumbotron.access-denied h2{
+  font-weight: 100;
+  padding: .5em .5em .25em .5em;
+  color: red;
+  text-align: center;
+}
+
+p.access-denied {
+  font-size: 1.2em;
+  padding: 0 .5em 1em .5em;
+  text-align: center;
+}
 /*********** Intro Page ***************/
 
 .ui.large.segment.intro {
@@ -85,8 +107,11 @@ h2 {
   border: none;
   box-shadow: none;
 }
+
+.ui.grid > .column:not(.row) {
+  height:80%;
+}
 .ui.segment.pictureBox {
-  height: 80%;
   background: black;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -193,6 +218,11 @@ textarea .textEditor {
   margin-left: auto;
   margin-right: auto;
   top: 2em;
+  padding: 0;
+}
+
+.ui.divided.list > .item {
+  padding: 1em;
 }
 
 .ui.large.form.segment {
@@ -201,7 +231,35 @@ textarea .textEditor {
   -moz-border-radius: 15px;
   border-radius: 15px;
 }
+.ui.large.form.segment.signup {
+  font-size: 1.5em;
+}
+
+div#Title.header, div.right.floated.compact.ui.button {
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align: middle;
+}
+
+div#Title.header {
+  font-size: 2em;
+  padding: .5em .5em .5em 2em;
+
+}
 
 
+/*.ui.list .list > .item [class*="right floated"], .ui.list > .item [class*="right floated"] {
+  vertical-align: middle;
+  margin-top: 1em;
+}
 
+div.ui.divided.list {
+  height: 100%;
+
+}
+div.ui.divided.list > div.item {
+ margin: .5em;
+ vertical-align: middle;
+}*/
 
