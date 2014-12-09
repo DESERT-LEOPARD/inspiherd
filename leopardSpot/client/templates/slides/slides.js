@@ -145,6 +145,13 @@
     'click #prev': function () {
       prev();
 
+    },
+    'click #poll' : function () {
+      console.log("taking a poll...");
+      Router.go('/poll');
+    },
+    'click #thumbcheck' : function () {
+      Router.go('/thumbs')
     }
   });
 

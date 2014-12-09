@@ -25,6 +25,23 @@ Router.route('/list',{
   name: 'savedPresentations'
 });
 
+Router.route('/poll',{
+  name: 'hello'
+});
+
+Router.route('/results',{
+  name: 'polling'
+});
+
+Router.route('/thumbs',{
+  name: 'thumb'
+});
+
+Router.route('/thumbresults',{
+  name: 'thumbresults'
+});
+
+
 Router.route('slides/:_sd_id/:_page?', function(){
   this.layout('slideLayout');
 
