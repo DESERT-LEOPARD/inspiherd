@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  An interactive slideshow maker and presentation tool
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  For presenters who know the value of realtime feedback and audience participation
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+ Leopard Spot is a cloud-based solution for making and saving simple, beautiful presentations. Every user can make and save presentations online, then share with an audience. The audience can view slides on whatever device they choose, but only the presenter can control the flow.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  Dull presentations that take too long to make and don't receive the proper feedback needed to improve
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  LeopardSpot incorporates real-time feedback into presentations, with responsive views form any device.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+ "We wanted to enable presenters to interact with the audience and focus on content and realtime feedback. With LeopardSpot, they can do just that.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  Go to www.leopardspotbeta.meteor.com. Sign up. Make slides.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+ " I used to spend hours trying to draw up complex slides that my audience would practically snooze through. Now, they can review them on their own phones and give realtime feedback that helps me iterate for the next time. I love LeopardSpot!"
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+ Navigate to our website and give it a try for your next project.
