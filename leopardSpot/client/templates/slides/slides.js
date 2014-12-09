@@ -22,6 +22,7 @@
 
       var foundSlideDeck = SlideDecks.findOne({_id:Session.get('_sd_id')});
       if ( foundSlideDeck ) {
+        Session.set('_title', foundSlideDeck.title);
         _mdSlides = foundSlideDeck.mdSlides;
         Session.set('_slideLength', _mdSlides.length);
         _mdSlides.unshift('');
@@ -52,7 +53,11 @@
   Template.slides.helpers({
     isPresentor: isPresentor,
 
+    _ps_id: function() {
+      return Session.get('_ps_id');
+    },
     _page: function() {
+      fetchDep.depend();
       return Session.get("_page");
     },
     _slideLength: function() {
@@ -61,7 +66,11 @@
     markDownSource: function(n) {
       fetchDep.depend();
       if (_mdSlides) {
-        return _mdSlides[n];
+        if ( n === 0 ) {
+          return '#'+Session.get("_title");
+        } else {
+          return _mdSlides[n];
+        }
       }
     },
     opacity: function () {
@@ -194,6 +203,16 @@
       // uiBodyKeyBindingHandler.stop();
     }
   });
+
+  Tracker.autorun( function() {
+    if (Session.get('_page')===0) {
+      $("#qrcode")
+      .qrcode({width: 400,height: 400,text: "http://leospot.pio.tw/sessions/"+Session.get('_ps_id')});
+    } else {
+      console.log('www');
+      $("#qrcode").hide();
+    }
+  })
   
 
 })();

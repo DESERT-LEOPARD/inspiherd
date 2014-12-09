@@ -28,7 +28,7 @@ if ( Meteor.isServer ) {
         presenter_id: String
       });
 
-      presentSession.page = 1;
+      presentSession.page = 0;
       presentSession.polls = [];
 
       var id = PresentSessions.insert(presentSession);
