@@ -1,7 +1,7 @@
 (function(){
   
   var _mdSlides;
-  var ID = {};
+  var ID = {pause: true};
   ID.id = Session.get('_ps_id') + '_stopwatch';
   Session.set(Session.get('_ps_id') + '_stopwatch', localStorage.getItem(ID.id));
 
@@ -76,6 +76,7 @@
       if(!localStorage.getItem(ID.id)) {
         localStorage.setItem(ID.id, 0);
       }
+      Meteor.clearInterval(ID.intID);
       generateTimer(ID);
       if(ID.stopwatch >= 60){
         if(ID.stopwatch >= 3600) {
@@ -105,9 +106,9 @@
     ID.stopwatch = stopwatch;
     // console.log(stopwatch);
     localStorage.setItem(ID.id, stopwatch);
-    Meteor.setTimeout(function(){
+    ID.intID = Meteor.setTimeout(function(){
       stopwatch++;
-      console.log('stopwatch', stopwatch);
+      // console.log('stopwatch', stopwatch);
       Session.set(ID.id, stopwatch);
     },1000);
   };
@@ -142,13 +143,6 @@
     },200);
   }
 
-  var pauseTimer = function(){
-    console.log(Session.get('timerID'));
-    Meteor.clearInterval();
-  }
-  // var resumeTimer = function(){
-
-  // }
   var next = function() {
     goPage(Session.get("_page") + 1);
   }
@@ -170,6 +164,19 @@
     },
     'click #thumbcheck' : function () {
       Router.go('/thumbs')
+    },
+    'click #stopwatch': function(){
+      if(ID.pause){
+        ID.pause = false;
+        Meteor.clearInterval(ID.intID);
+      } else {
+        Session.set(ID.id, localStorage.getItem(ID.id));
+        ID.pause = true;
+      }
+    },
+    'click #reset': function(){
+      Session.set(ID.id, 0);
+      localStorage.setItem(ID.id, 0);
     }
   });
 
