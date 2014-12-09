@@ -39,8 +39,8 @@
 - semantic-ui
 
 ## Development
-  curl https://install.meteor.com/ | sh
-  meteor
+    curl https://install.meteor.com/ | sh
+    meteor
 
 ### Installing Dependencies
 
