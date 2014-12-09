@@ -163,7 +163,6 @@
     },
     'click #prev': function () {
       prev();
-
     },
     'click #poll' : function () {
       console.log("taking a poll...");
