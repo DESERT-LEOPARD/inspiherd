@@ -2,7 +2,6 @@
   
   var _mdSlides;
   var ID = {pause: true};
-
   ID.id = Session.get('_ps_id') + '_stopwatch';
   Session.set(Session.get('_ps_id') + '_stopwatch', localStorage.getItem(ID.id));
 
