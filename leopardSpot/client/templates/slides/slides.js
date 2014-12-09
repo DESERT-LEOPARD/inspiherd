@@ -110,7 +110,6 @@
     ID.intID = Meteor.setTimeout(function(){
       stopwatch++;
       // console.log('stopwatch', stopwatch);
-
       Session.set(ID.id, stopwatch);
     },1000);
   };
