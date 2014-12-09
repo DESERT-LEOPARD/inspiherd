@@ -5,8 +5,7 @@ if (Meteor.isClient) {
   Session.setDefault("voteC", 0);
   Session.setDefault("voteD", 0);
 
-
-  Template.hello.helpers({
+  Template.polling.helpers({
     voteA: function () {
       return Session.get("voteA");
     },
@@ -25,27 +24,24 @@ if (Meteor.isClient) {
     'click #voteA': function () {
       // increment the counter when button is clicked
       Session.set("voteA", Session.get("voteA") + 1);
-      Session.set("choiceA", $('#choiceA')
-                              .progress('increment'));
-      
-          },
+      Router.go('/results');
+
+      // $('#choiceA').progress('increment');
+    },
     'click #voteB': function () {
       // increment the counter when button is clicked
       Session.set("voteB", Session.get("voteB") + 1);
-      Session.set("choiceB", $('#choiceB')
-                              .progress('increment'));
+      Router.go('/results');
     },
     'click #voteC': function () {
       // increment the counter when button is clicked
       Session.set("voteC", Session.get("voteC") + 1);
-      Session.set("choiceC", $('#choiceC')
-                              .progress('increment'));
+      Router.go('/results');
     },
     'click #voteD': function () {
       // increment the counter when button is clicked
       Session.set("voteD", Session.get("voteD") + 1);
-      Session.set("choiceD", $('#choiceD')
-                            .progress('increment'));
+      Router.go('/results');
     }
   });
 }

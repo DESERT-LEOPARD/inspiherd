@@ -3,11 +3,8 @@ if (Meteor.isClient) {
   Session.setDefault("thumbUp", 0);
   Session.setDefault("thumbMiddle", 0);
   Session.setDefault("thumbDown", 0);
-  var thumbsTotal = 0;
-  var votesTotal = 0;
-  var averageTotal;
 
-  Template.thumb.helpers({
+  Template.thumbresults.helpers({
     thumbUp: function () {
       return Session.get("thumbUp");
     },
@@ -19,6 +16,7 @@ if (Meteor.isClient) {
     }
   });
 
+  //work in progress thumb rotation script
   function rotateThumb() {
   var c=document.getElementById("rotatingThumb");
   var ctx=c.getContext("2d");
@@ -27,28 +25,20 @@ if (Meteor.isClient) {
 
   Template.thumb.events({
     'click #thumbUp': function () {
+      // increment the counter when button is clicked
       Session.set("thumbUp", Session.get("thumbUp") + 1);
-      Session.set("rotatingThumb", rotateThumb());
-      thumbsTotal += 1;
-      votesTotal++;
-      averageTotal = thumbsTotal/votesTotal;
-      console.log(thumbsTotal);
-      console.log(votesTotal);
-      console.log(averageTotal);
+      Router.go('/thumbResults');
     },
     'click #thumbMiddle': function () {
       // increment the counter when button is clicked
-      Session.set("thumbMiddle", Session.get("thumbMiddle") + .5);
-      thumbsTotal += 0.5;
-      votesTotal++;
-      averageTotal = thumbsTotal/votesTotal;
+      Session.set("thumbMiddle", Session.get("thumbMiddle") + 1);
+      Router.go('/thumbResults');
     },
     'click #thumbDown': function () {
       // increment the counter when button is clicked
-      Session.set("thumbDown", Session.get("thumbDown") + 0);
-      votesTotal++;
-      averageTotal = thumbsTotal/votesTotal;
-    } 
+      Session.set("thumbDown", Session.get("thumbDown") + 1);
+      Router.go('/thumbResults');
+    }
   });
 }
 
@@ -57,7 +47,3 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
-
-
-
-
