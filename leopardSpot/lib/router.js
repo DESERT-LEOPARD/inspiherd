@@ -42,3 +42,17 @@ Router.route('sessions/:_ps_id', function(){
   Session.set('isSession', true);
   this.render('slides');
 });
+
+var requireLogin = function() {
+  if (! Meteor.user()) {
+    if (Meteor.loggingIn()) {
+      this.render(this.loadingTemplate);
+    } else {
+      this.render('accessDenied');
+    }
+  } else {
+    this.next();
+  }
+}
+
+Router.onBeforeAction(requireLogin, {only: 'makePresentation'});
