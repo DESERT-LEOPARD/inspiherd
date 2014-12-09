@@ -1,12 +1,15 @@
 (function(){
   
   var _mdSlides;
+  var ID = {pause: true};
+  ID.id = Session.get('_ps_id') + '_stopwatch';
+  Session.set(Session.get('_ps_id') + '_stopwatch', localStorage.getItem(ID.id));
 
   var fetchDep = new Tracker.Dependency;
   var handle = Tracker.autorun(function() {
     var foundSessionOrNonSession = true;
     if ( Session.get('isSession') ) {
-      foundSessionOrNonSession = PresentSessions.findOne({_id:Session.get('_ps_id')})
+      foundSessionOrNonSession = PresentSessions.findOne({_id:Session.get('_ps_id')});
       if ( foundSessionOrNonSession ) {
         Session.set('_sd_id', foundSessionOrNonSession.slideDeck_id);
         Session.set('_presenter_id', foundSessionOrNonSession.presenter_id);
@@ -26,7 +29,7 @@
         // handle.stop();
       }
     }
-    Session.set('stopwatch', 0);
+
   });
 
   var validatePageNum = function(pg) {
@@ -68,36 +71,47 @@
     slideLength: function(){
       return Session.get('slideLength');
     },
-    stopwatch: function(time) {
+    stopwatch: function() {
       var hours, minutes, seconds;
-      // console.log('stopwatch called');
-      var stopwatch = Session.get('stopwatch');
-      Meteor.setInterval(function(){
-        stopwatch++;
-        Session.set('stopwatch', stopwatch);
-      },1000);
-
-      if(stopwatch >= 60){
-        if(stopwatch >= 3600) {
+      if(!localStorage.getItem(ID.id)) {
+        localStorage.setItem(ID.id, 0);
+      }
+      Meteor.clearInterval(ID.intID);
+      generateTimer(ID);
+      if(ID.stopwatch >= 60){
+        if(ID.stopwatch >= 3600) {
           // console.log('hours');
-          hours = Math.floor(stopwatch / 3600);
-          minutes = Math.floor((stopwatch - (hours * 60) * 60) / 60);
+          hours = Math.floor(ID.stopwatch / 3600);
+          minutes = Math.floor((ID.stopwatch - (hours * 60) * 60) / 60);
         }
         // console.log('minutes');
-        minutes = minutes || Math.floor(stopwatch / 60);
-        seconds = stopwatch - (minutes * 60);
+        minutes = minutes || Math.floor(ID.stopwatch / 60);
+        seconds = ID.stopwatch - (minutes * 60);
       }
       else {
         // console.log('seconds');
-        seconds = stopwatch;
+        seconds = ID.stopwatch;
       }
-
+      // console.log(hours, minutes, seconds);
       return (hours === undefined ? '00:' : (hours < 10? '0' + hours + ":" : hours + ":")) +
              (minutes === undefined ? '00:' : (minutes < 10 ? '0' + minutes + ":" : minutes + ":")) +
              (seconds < 10 ? '0' + seconds : seconds);
     }
-    
+
   });
+    
+  var generateTimer = function(ID){
+    // stopwatch = Session.get('stopwatch');
+    stopwatch = Session.get(ID.id);
+    ID.stopwatch = stopwatch;
+    // console.log(stopwatch);
+    localStorage.setItem(ID.id, stopwatch);
+    ID.intID = Meteor.setTimeout(function(){
+      stopwatch++;
+      // console.log('stopwatch', stopwatch);
+      Session.set(ID.id, stopwatch);
+    },1000);
+  };
 
   var goPage = function(pg) {
     if ( !validatePageNum(pg) ) return ;
@@ -129,7 +143,6 @@
     },200);
   }
 
-
   var next = function() {
     goPage(Session.get("_page") + 1);
   }
@@ -144,7 +157,6 @@
     },
     'click #prev': function () {
       prev();
-
     },
     'click #poll' : function () {
       console.log("taking a poll...");
@@ -152,6 +164,19 @@
     },
     'click #thumbcheck' : function () {
       Router.go('/thumbs')
+    },
+    'click #stopwatch': function(){
+      if(ID.pause){
+        ID.pause = false;
+        Meteor.clearInterval(ID.intID);
+      } else {
+        Session.set(ID.id, localStorage.getItem(ID.id));
+        ID.pause = true;
+      }
+    },
+    'click #reset': function(){
+      Session.set(ID.id, 0);
+      localStorage.setItem(ID.id, 0);
     }
   });
 

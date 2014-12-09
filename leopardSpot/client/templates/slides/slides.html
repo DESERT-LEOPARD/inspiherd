@@ -30,6 +30,18 @@
         width: 220px;
         height: 30px;
     }
+    .ui.button.reset{
+        display: inline-block;
+        border-radius: 5px;
+        opacity: 80;
+        padding: 8px;
+        margin: 15px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 30px;
+    }
   </style>
 
 
@@ -45,17 +57,25 @@
     {{#if isPresentor}}
     <div class="ui button" id="prev">prev</div>
     <div class="ui button" id="next">next</div>
-    {{/if}}
     <div class="ui button" id="poll">quickPoll</div>
+    
     <div class="ui button" id="thumbcheck">
       <i class="thumbs up icon"></i>
     </div>
 
-  </div>
-  
-  <div class="ui button stopwatch">
+  <div class="ui button reset" id="reset">
     <i class="wait icon"></i><strong>
-    <time id="stopwatch">{{ stopwatch }}</time>
+    reset
   </strong>
   </div>
+    <div class="ui button stopwatch" id="stopwatch">
+      <i class="wait icon"></i><strong>
+      <time id="stopwatch">{{ stopwatch }}</time>
+    </strong>
+    </div>
+    {{/if}}
+
+  </div>
+  
+
 </template>
