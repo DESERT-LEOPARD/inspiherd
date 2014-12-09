@@ -23,7 +23,7 @@
 }
 
 .slide h1 {
-	font-size: 5em;
+	font-size: 3.5em;
 	font-weight: bold;
 	color: #EDB2B2;
 	margin-bottom: 0;
@@ -32,6 +32,7 @@
 }
 
 .slide h2 {
+	font-size: 1.5em;
 	color: #DE5252;
 	margin-top: 0;
 	margin-left: .5em;
@@ -90,6 +91,17 @@
 
 }
 
+#controller{
+	position:fixed;
+	bottom: 0;
+}
+
 #counter{
 	position: fixed;
+}
+
+#qrcode{
+	position: fixed;
+	left:10%;
+	bottom: 10%;
 }

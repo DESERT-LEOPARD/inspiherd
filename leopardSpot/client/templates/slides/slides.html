@@ -53,10 +53,14 @@
   {{#markdown}}
   {{markDownSource _page}}
   {{/markdown}}
-
+  
+  <div id="qrcode"></div>
     {{#if isPresentor}}
-    <div class="ui button" id="prev">prev</div>
-    <div class="ui button" id="next">next</div>
+    <div id="#controller">
+      <div class="ui button" id="prev">prev</div>
+      <div class="ui button" id="next">next</div>
+    </div>
+    {{/if}}
     <div class="ui button" id="poll">quickPoll</div>
     
     <div class="ui button" id="thumbcheck">
@@ -64,6 +68,12 @@
     </div>
 
   <div class="ui button reset" id="reset">
+  </div>
+
+
+  
+
+  <div class="ui button stopwatch">
     <i class="wait icon"></i><strong>
     reset
   </strong>
